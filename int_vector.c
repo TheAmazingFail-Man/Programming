@@ -41,6 +41,43 @@ size_t int_vector_get_size (const intVector *v)
 	}
 }
 
+intVector *int_vector_copy (const intVector *v)
+{
+	intVector *copy = int_vector_new (v->capacity);
+	if (!copy) {
+	
+		return NULL;
+	} else {
+		memcpy (copy->data, v->data, v->size);
+		
+		return copy;
+	}
+}
+
+int int_vector_push_back (intVector *v, int item)
+{
+	if (v->capacity == v->size) {
+		v = realloc(v, v->capacity * 2);
+		if (!v) {
+		
+			return -1;
+		}
+		v->capacity *= 2;
+	}
+	v->data[v->size++] = item;
+	
+	return 0;
+}
+
+void int_vector_pop_back (intVector *v)
+{
+	if (v->size == 0) {
+		printf ("No effect\n");
+	} else {
+		v->data[v->size--] = 0;
+	}
+}
+
 void int_vector_free (intVector *v)
 {
 	if (v) {

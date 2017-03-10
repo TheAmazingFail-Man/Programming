@@ -9,5 +9,7 @@ typedef struct {
 intVector* int_vector_new (size_t initial_size);
 size_t int_vector_get_capacity (const intVector *v);
 size_t int_vector_get_size (const intVector *v);
-intVector* int_vector_copy (const intVector *v)
+intVector* int_vector_copy (const intVector *v);
+int int_vector_push_back (intVector *v, int item);
+void int_vector_pop_back (intVector *v);
 void int_vector_free (intVector *v);
