@@ -10,8 +10,8 @@ int main() {
 	printf("\nSize: %zd\n", int_vector_get_size (a));
 	printf("Capacity: %zd\n", int_vector_get_capacity (a));
 
-	//intVector *b;
-	//b = int_vector_copy (a);
+	intVector *b;
+	b = int_vector_copy (a);
 	
 	printf("\nInput element: ");
 	scanf("%d", &item);
