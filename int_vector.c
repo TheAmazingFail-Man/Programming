@@ -53,7 +53,8 @@ intVector *int_vector_copy (const intVector *v)
 		return NULL;
 	} else {
 		memcpy(copy->data, v->data, v->size);
-	
+		copy->size = v->size;
+		
 		return copy;
 	}
 }
@@ -63,12 +64,12 @@ int int_vector_push_back (intVector *v, int item)
 	if (v->capacity == v->size) {
 		v->data = realloc(v->data, (v->capacity * 2) * sizeof(int));
 		if (!v) {
+			
 			return -1;
 		}
 		v->capacity *= 2;
 	}
-	v->data[v->size] = item;
-	v->size++;
+	v->data[v->size++] = item;
 	
 	return 0;
 }
@@ -78,8 +79,7 @@ void int_vector_pop_back (intVector *v)
 	if (v->size == 0) {
 		printf("No effect\n");
 	} else {
-		v->data[v->size-1] = 0;
-		v->size--;
+		v->data[v->size--] = 0;
 	}
 }
 
@@ -89,10 +89,8 @@ int int_vector_get_item (const intVector *v, size_t index)
 		
 		return NULL;
 	} else {
-		int i = index;
-		int x = v->data[i];
 		
-		return x;
+		return v->data[index];
 	}
 }
 
@@ -106,19 +104,26 @@ int int_vector_shrink_to_fit (intVector *v)
 	v = realloc(v, v->size * sizeof(int));
 	v->capacity = v->size;
 	if (v->capacity == v->size) {
+		
 		return 0;
+	} else {
+		
+		return -1;
 	}
-	else return -1;
 }
 
 int int_vector_reserve (intVector *v, size_t new_capacity)
 {
 	if (new_capacity <= v->capacity) {
+		printf("\nSize: %zd\n", v->size);
+		printf("Capacity: %zd\n", v->capacity);
 		
-		return -1;
+		return 0;
 	} else {
 		v = realloc(v, new_capacity * sizeof(int));
 		v->capacity = new_capacity;
+		printf("\nSize: %zd\n", v->size);
+		printf("Capacity: %zd\n", v->capacity);
 	
 		return 0;
 	}

@@ -35,9 +35,11 @@ int main() {
 	printf("\nInput new capacity: ");
 	scanf("%d", &new_size);
 	x = int_vector_reserve (a, new_size);
+	
 	printf("\nInput new size: ");
 	scanf("%d", &new_size);
 	x = int_vector_resize (a, new_size);
+	
 	printf("\nVector a: ");
 	for (i = 0; i < a->size; i++) {
 		j = int_vector_get_item (a, i);
