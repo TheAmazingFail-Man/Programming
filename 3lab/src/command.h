@@ -1,7 +1,7 @@
-#ifndef _COMMAND_H
-#define _COMMAND_H
+#ifndef COMMAND_H
+#define COMMAND_H
 
-int encode_file(const char *in_file_name, const char *out_file_name);
-int decode_file(const char *in_file_name, const char *out_file_name);
+int encode_file(const char *in_file, const char *out_file);
+int decode_file(const char *in_file, const char *out_file);
 
 #endif
