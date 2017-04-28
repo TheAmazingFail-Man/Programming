@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include <inttypes.h>
 #include <stdlib.h>
 #include <string.h>
 #include "command.h"
-//#include "coder.h"
+#include "coder.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,7 +11,6 @@ int main(int argc, char *argv[])
 	} else if (strcmp(argv[1], "decode") == 0) {
 		decode_file(argv[2], argv[3]);
 	}
-	
 	
 	return 0;
 }
