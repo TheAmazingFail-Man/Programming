@@ -10,6 +10,7 @@ int encode_file(const char *in_file, const char *out_file)
 
     if (!in) {
         printf("Error with IN file\n");
+        
         return -1;
     }
 
@@ -22,6 +23,7 @@ int encode_file(const char *in_file, const char *out_file)
            		printf("Error with scan\n");
 				fclose(in);
 				fclose(out);           		
+           		
            		return -1;
         }
 
@@ -62,6 +64,7 @@ int decode_file(const char *in_file, const char *out_file)
 
     if (!in) {
         printf("Error with open\n");
+        
         return -1;
     }
     

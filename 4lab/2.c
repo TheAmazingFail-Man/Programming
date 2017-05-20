@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 int fib_rec(int n)
 {
     int i, mas[n];
@@ -42,6 +41,6 @@ int main()
 
 	printf("Recursive Fib = %d\n", fib_rec(n));
 	printf("Iterative Fib = %d\n", fib_iter(n));
-	system("pause");
+	
 	return 0;
 }

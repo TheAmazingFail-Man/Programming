@@ -8,7 +8,7 @@ int sum_rec(int *mas, int n)
 		return mas[0];
 	}
 
-	return mas[n] + sum_rec(mas, n - 1); //складываем посл эл-т 
+	return mas[n] + sum_rec(mas, n - 1);
 }
 
 int sum_iter(int *mas, int n)
@@ -33,9 +33,8 @@ int main()
 	for (i = 0; i < n; i++) {
 		scanf("%d", &mas[i]);
 	}
-	printf("Recursive sum = %d\n", sum_rec(mas, n - 1)); //, номер посл эл-та
-	printf("Iterative sum = %d\n", sum_iter(mas, n)); // массив, кол-во эл-ов
-	system("pause");
+	printf("Recursive sum = %d\n", sum_rec(mas, n - 1));
+	printf("Iterative sum = %d\n", sum_iter(mas, n));
 	free(mas);
 
 	return 0;

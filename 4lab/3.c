@@ -42,7 +42,6 @@ int main(void)
     printf("Enter number = ");
     scanf("%d", &x);
     printf("Answer = %s\n", string(x));
-    system("pause");
 
     return 0;
 }
